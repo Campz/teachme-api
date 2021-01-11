@@ -4,7 +4,7 @@
         "title": "Laravel Generator APIs",
         "version": "1.0.0"
     },
-    "basePath": "/aprendendo/public/api",
+    "basePath": "/teachme-api/public/api",
     "paths": {
         "/instituicaos": {
             "get": {
