@@ -1,6 +1,6 @@
 [
     {
-        "name": "CdInstituicao",
+        "name": "CdDisciplina",
         "dbType": "integer,false",
         "htmlType": null,
         "validations": null,
@@ -12,10 +12,10 @@
         "inView": false
     },
     {
-        "name": "NmInstituicao",
-        "dbType": "string,200",
+        "name": "NmDisciplina",
+        "dbType": "string,100",
         "htmlType": "text",
-        "validations": "required|string|max:200|string|max:200",
+        "validations": "required|string|max:100|string|max:100",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -24,10 +24,10 @@
         "inView": true
     },
     {
-        "name": "Endereco",
-        "dbType": "string,200",
-        "htmlType": "text",
-        "validations": "required|string|max:200|string|max:200",
+        "name": "CdTipo",
+        "dbType": "integer,false",
+        "htmlType": null,
+        "validations": "required|integer|integer",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -37,6 +37,14 @@
     },
     {
         "type": "relation",
-        "relation": "1tm,Usuario,CdInstituicao"
+        "relation": "mt1,Tipo,CdTipo"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,Usuario,anuncio"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,Usuario,disciplina_leciona"
     }
 ]

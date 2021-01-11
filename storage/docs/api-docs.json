@@ -6,6 +6,802 @@
     },
     "basePath": "/teachme-api/public/api",
     "paths": {
+        "/anuncios": {
+            "get": {
+                "tags": [
+                    "Anuncio"
+                ],
+                "summary": "Get a listing of the Anuncios.",
+                "description": "Get all Anuncios",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Anuncio"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Anuncio"
+                ],
+                "summary": "Store a newly created Anuncio in storage",
+                "description": "Store Anuncio",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Anuncio that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Anuncio"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Anuncio"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/anuncios/{id}": {
+            "get": {
+                "tags": [
+                    "Anuncio"
+                ],
+                "summary": "Display the specified Anuncio",
+                "description": "Get Anuncio",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Anuncio",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Anuncio"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Anuncio"
+                ],
+                "summary": "Update the specified Anuncio in storage",
+                "description": "Update Anuncio",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Anuncio",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Anuncio that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Anuncio"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Anuncio"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Anuncio"
+                ],
+                "summary": "Remove the specified Anuncio from storage",
+                "description": "Delete Anuncio",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Anuncio",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/aulas": {
+            "get": {
+                "tags": [
+                    "Aula"
+                ],
+                "summary": "Get a listing of the Aulas.",
+                "description": "Get all Aulas",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Aula"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Aula"
+                ],
+                "summary": "Store a newly created Aula in storage",
+                "description": "Store Aula",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Aula that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Aula"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Aula"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/aulas/{id}": {
+            "get": {
+                "tags": [
+                    "Aula"
+                ],
+                "summary": "Display the specified Aula",
+                "description": "Get Aula",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Aula",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Aula"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Aula"
+                ],
+                "summary": "Update the specified Aula in storage",
+                "description": "Update Aula",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Aula",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Aula that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Aula"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Aula"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Aula"
+                ],
+                "summary": "Remove the specified Aula from storage",
+                "description": "Delete Aula",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Aula",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/disciplinas": {
+            "get": {
+                "tags": [
+                    "Disciplina"
+                ],
+                "summary": "Get a listing of the Disciplinas.",
+                "description": "Get all Disciplinas",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Disciplina"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Disciplina"
+                ],
+                "summary": "Store a newly created Disciplina in storage",
+                "description": "Store Disciplina",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Disciplina that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Disciplina"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Disciplina"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/disciplinas/{id}": {
+            "get": {
+                "tags": [
+                    "Disciplina"
+                ],
+                "summary": "Display the specified Disciplina",
+                "description": "Get Disciplina",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Disciplina",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Disciplina"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Disciplina"
+                ],
+                "summary": "Update the specified Disciplina in storage",
+                "description": "Update Disciplina",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Disciplina",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Disciplina that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Disciplina"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Disciplina"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Disciplina"
+                ],
+                "summary": "Remove the specified Disciplina from storage",
+                "description": "Delete Disciplina",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Disciplina",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/disciplinaLecionas": {
+            "get": {
+                "tags": [
+                    "Disciplina_Leciona"
+                ],
+                "summary": "Get a listing of the Disciplina_Lecionas.",
+                "description": "Get all Disciplina_Lecionas",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Disciplina_Leciona"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Disciplina_Leciona"
+                ],
+                "summary": "Store a newly created Disciplina_Leciona in storage",
+                "description": "Store Disciplina_Leciona",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Disciplina_Leciona that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Disciplina_Leciona"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Disciplina_Leciona"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/disciplinaLecionas/{id}": {
+            "get": {
+                "tags": [
+                    "Disciplina_Leciona"
+                ],
+                "summary": "Display the specified Disciplina_Leciona",
+                "description": "Get Disciplina_Leciona",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Disciplina_Leciona",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Disciplina_Leciona"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Disciplina_Leciona"
+                ],
+                "summary": "Update the specified Disciplina_Leciona in storage",
+                "description": "Update Disciplina_Leciona",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Disciplina_Leciona",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Disciplina_Leciona that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Disciplina_Leciona"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Disciplina_Leciona"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Disciplina_Leciona"
+                ],
+                "summary": "Remove the specified Disciplina_Leciona from storage",
+                "description": "Delete Disciplina_Leciona",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Disciplina_Leciona",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
         "/instituicaos": {
             "get": {
                 "tags": [
@@ -204,9 +1000,514 @@
                     }
                 }
             }
+        },
+        "/tipos": {
+            "get": {
+                "tags": [
+                    "Tipo"
+                ],
+                "summary": "Get a listing of the Tipos.",
+                "description": "Get all Tipos",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Tipo"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Tipo"
+                ],
+                "summary": "Store a newly created Tipo in storage",
+                "description": "Store Tipo",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Tipo that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Tipo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Tipo"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/tipos/{id}": {
+            "get": {
+                "tags": [
+                    "Tipo"
+                ],
+                "summary": "Display the specified Tipo",
+                "description": "Get Tipo",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Tipo",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Tipo"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Tipo"
+                ],
+                "summary": "Update the specified Tipo in storage",
+                "description": "Update Tipo",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Tipo",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Tipo that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Tipo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Tipo"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Tipo"
+                ],
+                "summary": "Remove the specified Tipo from storage",
+                "description": "Delete Tipo",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Tipo",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/usuarios": {
+            "get": {
+                "tags": [
+                    "Usuario"
+                ],
+                "summary": "Get a listing of the Usuarios.",
+                "description": "Get all Usuarios",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Usuario"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Usuario"
+                ],
+                "summary": "Store a newly created Usuario in storage",
+                "description": "Store Usuario",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Usuario that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Usuario"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Usuario"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/usuarios/{id}": {
+            "get": {
+                "tags": [
+                    "Usuario"
+                ],
+                "summary": "Display the specified Usuario",
+                "description": "Get Usuario",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Usuario",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Usuario"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Usuario"
+                ],
+                "summary": "Update the specified Usuario in storage",
+                "description": "Update Usuario",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Usuario",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Usuario that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Usuario"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Usuario"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Usuario"
+                ],
+                "summary": "Remove the specified Usuario from storage",
+                "description": "Delete Usuario",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Usuario",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "string"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
+        "Anuncio": {
+            "required": [
+                "QtdAlunos",
+                "CdDisciplina",
+                "CdUsuario_Professor",
+                "Valor"
+            ],
+            "properties": {
+                "CdAnuncio": {
+                    "description": "CdAnuncio",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "QtdAlunos": {
+                    "description": "QtdAlunos",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "Descricao": {
+                    "description": "Descricao",
+                    "type": "string"
+                },
+                "CdDisciplina": {
+                    "description": "CdDisciplina",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "CdUsuario_Professor": {
+                    "description": "CdUsuario_Professor",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "Valor": {
+                    "description": "Valor",
+                    "type": "number",
+                    "format": "number"
+                }
+            }
+        },
+        "Aula": {
+            "required": [
+                "CdUsuario_Aluno",
+                "CdAnuncio",
+                "Horario"
+            ],
+            "properties": {
+                "CdAula": {
+                    "description": "CdAula",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "CdUsuario_Aluno": {
+                    "description": "CdUsuario_Aluno",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "CdAnuncio": {
+                    "description": "CdAnuncio",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "Horario": {
+                    "description": "Horario",
+                    "type": "string"
+                }
+            }
+        },
+        "Disciplina": {
+            "required": [
+                "NmDisciplina",
+                "CdTipo"
+            ],
+            "properties": {
+                "CdDisciplina": {
+                    "description": "CdDisciplina",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "NmDisciplina": {
+                    "description": "NmDisciplina",
+                    "type": "string"
+                },
+                "CdTipo": {
+                    "description": "CdTipo",
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "Disciplina_Leciona": {
+            "required": [
+                "CdDisciplina",
+                "CdUsuario_Professor"
+            ],
+            "properties": {
+                "CdDisciplina": {
+                    "description": "CdDisciplina",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "CdUsuario_Professor": {
+                    "description": "CdUsuario_Professor",
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
         "Instituicao": {
             "required": [
                 "NmInstituicao",
@@ -225,6 +1526,78 @@
                 "Endereco": {
                     "description": "Endereco",
                     "type": "string"
+                }
+            }
+        },
+        "Tipo": {
+            "required": [
+                "NmTipo"
+            ],
+            "properties": {
+                "CdTipo": {
+                    "description": "CdTipo",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "NmTipo": {
+                    "description": "NmTipo",
+                    "type": "string"
+                }
+            }
+        },
+        "Usuario": {
+            "required": [
+                "NmUsuario",
+                "Email",
+                "Login",
+                "Senha",
+                "DtNascimento",
+                "CdInstituicao"
+            ],
+            "properties": {
+                "CdUsuario": {
+                    "description": "CdUsuario",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "NmUsuario": {
+                    "description": "NmUsuario",
+                    "type": "string"
+                },
+                "Email": {
+                    "description": "Email",
+                    "type": "string"
+                },
+                "Login": {
+                    "description": "Login",
+                    "type": "string"
+                },
+                "Senha": {
+                    "description": "Senha",
+                    "type": "string"
+                },
+                "DtNascimento": {
+                    "description": "DtNascimento",
+                    "type": "string",
+                    "format": "date"
+                },
+                "Avaliacao": {
+                    "description": "Avaliacao",
+                    "type": "number",
+                    "format": "number"
+                },
+                "Descricao": {
+                    "description": "Descricao",
+                    "type": "string"
+                },
+                "Foto": {
+                    "description": "Foto",
+                    "type": "string"
+                },
+                "CdInstituicao": {
+                    "description": "CdInstituicao",
+                    "type": "integer",
+                    "format": "int32"
                 }
             }
         }

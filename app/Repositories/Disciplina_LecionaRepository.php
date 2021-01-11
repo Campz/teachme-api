@@ -2,23 +2,23 @@
 
 namespace App\Repositories;
 
-use App\Models\Instituicao;
+use App\Models\Disciplina_Leciona;
 use App\Repositories\BaseRepository;
 
 /**
- * Class InstituicaoRepository
+ * Class Disciplina_LecionaRepository
  * @package App\Repositories
- * @version January 11, 2021, 4:17 pm UTC
+ * @version January 11, 2021, 4:16 pm UTC
 */
 
-class InstituicaoRepository extends BaseRepository
+class Disciplina_LecionaRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'NmInstituicao',
-        'Endereco'
+        'CdDisciplina',
+        'CdUsuario_Professor'
     ];
 
     /**
@@ -36,6 +36,6 @@ class InstituicaoRepository extends BaseRepository
      **/
     public function model()
     {
-        return Instituicao::class;
+        return Disciplina_Leciona::class;
     }
 }

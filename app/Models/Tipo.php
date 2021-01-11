@@ -8,32 +8,27 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * @SWG\Definition(
- *      definition="Instituicao",
- *      required={"NmInstituicao", "Endereco"},
+ *      definition="Tipo",
+ *      required={"NmTipo"},
  *      @SWG\Property(
- *          property="CdInstituicao",
- *          description="CdInstituicao",
+ *          property="CdTipo",
+ *          description="CdTipo",
  *          type="integer",
  *          format="int32"
  *      ),
  *      @SWG\Property(
- *          property="NmInstituicao",
- *          description="NmInstituicao",
- *          type="string"
- *      ),
- *      @SWG\Property(
- *          property="Endereco",
- *          description="Endereco",
+ *          property="NmTipo",
+ *          description="NmTipo",
  *          type="string"
  *      )
  * )
  */
-class Instituicao extends Model
+class Tipo extends Model
 {
 
     use HasFactory;
 
-    public $table = 'instituicao';
+    public $table = 'tipo';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
@@ -42,8 +37,7 @@ class Instituicao extends Model
     public $connection = "mysql";
 
     public $fillable = [
-        'NmInstituicao',
-        'Endereco'
+        'NmTipo'
     ];
 
     /**
@@ -52,9 +46,8 @@ class Instituicao extends Model
      * @var array
      */
     protected $casts = [
-        'CdInstituicao' => 'integer',
-        'NmInstituicao' => 'string',
-        'Endereco' => 'string'
+        'CdTipo' => 'integer',
+        'NmTipo' => 'string'
     ];
 
     /**
@@ -63,15 +56,14 @@ class Instituicao extends Model
      * @var array
      */
     public static $rules = [
-        'NmInstituicao' => 'required|string|max:200',
-        'Endereco' => 'required|string|max:200'
+        'NmTipo' => 'required|string|max:100'
     ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
-    public function usuarios()
+    public function disciplinas()
     {
-        return $this->hasMany(\App\Models\Usuario::class, 'CdInstituicao');
+        return $this->hasMany(\App\Models\Disciplina::class, 'CdTipo');
     }
 }

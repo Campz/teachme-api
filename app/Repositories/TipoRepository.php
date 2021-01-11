@@ -2,23 +2,22 @@
 
 namespace App\Repositories;
 
-use App\Models\Instituicao;
+use App\Models\Tipo;
 use App\Repositories\BaseRepository;
 
 /**
- * Class InstituicaoRepository
+ * Class TipoRepository
  * @package App\Repositories
- * @version January 11, 2021, 4:17 pm UTC
+ * @version January 11, 2021, 4:18 pm UTC
 */
 
-class InstituicaoRepository extends BaseRepository
+class TipoRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'NmInstituicao',
-        'Endereco'
+        'NmTipo'
     ];
 
     /**
@@ -36,6 +35,6 @@ class InstituicaoRepository extends BaseRepository
      **/
     public function model()
     {
-        return Instituicao::class;
+        return Tipo::class;
     }
 }
