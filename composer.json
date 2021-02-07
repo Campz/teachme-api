@@ -19,7 +19,6 @@
         "infyomlabs/swagger-generator": "dev-master",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.2",
         "laravelcollective/html": "^6.2"
     },
     "require-dev": {
@@ -42,7 +41,7 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "github-oauth": {
-            "github.com": "6dff686ae522e845682befd45ab34cd7ebfcb45c"
+
         },
         "platform": {
             "php": "8.0.0"
