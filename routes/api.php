@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('instituicao', App\Http\Controllers\API\InstituicaoAPIController::class);
 
-
 Route::resource('anuncio', App\Http\Controllers\API\AnuncioAPIController::class);
 
 Route::resource('aula', App\Http\Controllers\API\AulaAPIController::class);
