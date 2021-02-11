@@ -46,7 +46,7 @@ class UsuarioAPIController extends AppBaseController
      *              ),
      *              @SWG\Property(
      *                  property="data",
-     *                  type="array",
+     *                  type="object",
      *                  @SWG\Items(ref="#/definitions/Usuario")
      *              ),
      *              @SWG\Property(
