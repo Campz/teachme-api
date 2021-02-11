@@ -40,19 +40,7 @@ class UsuarioAPIController extends AppBaseController
      *          description="successful operation",
      *          @SWG\Schema(
      *              type="object",
-     *              @SWG\Property(
-     *                  property="success",
-     *                  type="boolean"
-     *              ),
-     *              @SWG\Property(
-     *                  property="data",
-     *                  type="object",
-     *                  @SWG\Items(ref="#/definitions/Usuario")
-     *              ),
-     *              @SWG\Property(
-     *                  property="message",
-     *                  type="string"
-     *              )
+     *              @SWG\Items(ref="#/definitions/Usuario")
      *          )
      *      )
      * )
@@ -137,18 +125,19 @@ class UsuarioAPIController extends AppBaseController
      *          description="successful operation",
      *          @SWG\Schema(
      *              type="object",
-     *              @SWG\Property(
-     *                  property="success",
-     *                  type="boolean"
-     *              ),
-     *              @SWG\Property(
-     *                  property="data",
-     *                  ref="#/definitions/Usuario"
-     *              ),
-     *              @SWG\Property(
-     *                  property="message",
-     *                  type="string"
-     *              )
+     *              ref="#/definitions/Usuario"
+//     *             @SWG\Property(
+//     *                  property="success",
+//     *                  type="boolean"
+//     *              ),
+//     *              @SWG\Property(
+//     *                  property="data",
+//     *                  ref="#/definitions/Usuario"
+//     *              ),
+//     *              @SWG\Property(
+//     *                  property="message",
+//     *                  type="string"
+//     *              )
      *          )
      *      )
      * )
